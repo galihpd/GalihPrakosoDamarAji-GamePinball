@@ -8,14 +8,18 @@ public class PaddleController : MonoBehaviour
 
     public KeyCode input;
     public HingeJoint hinge;
-    public float springPower;
+    public float targetPressed;
+    public float targetRelease;
+
 
     void Start()
     {
-        
+        hinge = GetComponent<HingeJoint>();
+        targetPressed = hinge.limits.max;
+        targetRelease = hinge.limits.min;
     }
+    
 
-    // Update is called once per frame
     void Update()
     {
         ReadInput();
@@ -27,12 +31,12 @@ public class PaddleController : MonoBehaviour
 
         if(Input.GetKey(input))
         {
-            jointSpring.spring = springPower;
+            jointSpring.targetPosition = targetPressed;
         }
 
         else
         {
-            jointSpring.spring = 0;
+            jointSpring.targetPosition = targetRelease;
         }
 
         hinge.spring = jointSpring;
