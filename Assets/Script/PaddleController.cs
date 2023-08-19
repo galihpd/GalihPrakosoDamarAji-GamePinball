@@ -7,6 +7,8 @@ public class PaddleController : MonoBehaviour
     // Start is called before the first frame update
 
     public KeyCode input;
+    public HingeJoint hinge;
+    public float springPower;
 
     void Start()
     {
@@ -21,9 +23,18 @@ public class PaddleController : MonoBehaviour
 
     public void ReadInput()
     {
+        JointSpring jointSpring = hinge.spring;
+
         if(Input.GetKey(input))
         {
-            Debug.Log("Dipencet");   
+            jointSpring.spring = springPower;
         }
+
+        else
+        {
+            jointSpring.spring = 0;
+        }
+
+        hinge.spring = jointSpring;
     }
 }
