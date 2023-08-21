@@ -26,8 +26,6 @@ public class BumperController : MonoBehaviour
 
             //animasiin
             animator.SetTrigger("hit");
-            Debug.Log("Mantul");
-
         }   
     }
 }
