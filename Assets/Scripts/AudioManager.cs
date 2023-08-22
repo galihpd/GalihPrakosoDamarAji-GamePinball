@@ -6,6 +6,8 @@ public class AudioManager : MonoBehaviour
 {
     public AudioSource bgmAudioSource;
     public GameObject sfxAudioSource;
+	public GameObject Switchsfx;
+
 
 	private void Start()
 	{
@@ -25,6 +27,13 @@ public void PlaySFX(Vector3 spawnPosition)
 	// berbeda dengan bgm, disini kita buat script untuk 
 	// memunculkan prefabnya pada posisi sesuai dengan parameternya
 	GameObject.Instantiate(sfxAudioSource, spawnPosition, Quaternion.identity);
+}
+
+public void PlaySwitchSFX(Vector3 spawnPosition) 
+{ 
+	// berbeda dengan bgm, disini kita buat script untuk 
+	// memunculkan prefabnya pada posisi sesuai dengan parameternya
+	GameObject.Instantiate(Switchsfx, spawnPosition, Quaternion.identity);
 }
 
 }

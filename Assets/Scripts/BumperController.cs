@@ -11,7 +11,7 @@ public class BumperController : MonoBehaviour
 
     public AudioManager audioManager;
     public FxManager1 vfxManager;
-
+    
     public Renderer renderer;
     public Animator animator;
 

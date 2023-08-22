@@ -14,6 +14,8 @@ public class SwitchController : MonoBehaviour
   public Collider bola;
   public Material offMaterial;
   public Material onMaterial;
+  public AudioManager audiom;
+  public FxManager1 vfxManager;
 
   private SwitchState state;
   private Renderer renderer;
@@ -32,6 +34,8 @@ public class SwitchController : MonoBehaviour
     if (other == bola)
     {
       Toggle();
+      audiom.PlaySwitchSFX(other.transform.position);
+      vfxManager.PlaySwitchVFX(other.transform.position);
     }
   }
 
