@@ -8,6 +8,16 @@ public class MainMenuButton : MonoBehaviour
     // Update is called once per frame
     public void MulaiGame()
     {
-        SceneManager.LoadScene("GamePinball-Main"); // Replace "MainMenu" with the actual scene name   
+        SceneManager.LoadScene("GamePinball-Main");   
+    }
+
+    public void Credit()
+    {
+        SceneManager.LoadScene("Credit");   
+    }
+
+    public void Exit()
+    {
+        Application.Quit();
     }
 }

@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ExitCredit : MonoBehaviour
+public class LoseCon : MonoBehaviour
 {
-    
-private void Update()
-{
-    if (Input.GetKeyDown(KeyCode.Escape))
+  public Collider bola;
+
+  private void OnTriggerEnter(Collider other)
+  {
+    if (other == bola)
     {
         SceneManager.LoadScene("MainMenu");
     }
-}
+  }
 }

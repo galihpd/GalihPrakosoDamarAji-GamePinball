@@ -11,6 +11,7 @@ public class BumperController : MonoBehaviour
 
     public AudioManager audioManager;
     public FxManager1 vfxManager;
+    public ScoreManager scoreManager;
     
     public Renderer renderer;
     public Animator animator;
@@ -33,6 +34,7 @@ public class BumperController : MonoBehaviour
             animator.SetTrigger("hit");
             audioManager.PlaySFX(collision.transform.position);
             vfxManager.PlayVFX(collision.transform.position);
+            scoreManager.AddScore(50);
         }   
     }
     
